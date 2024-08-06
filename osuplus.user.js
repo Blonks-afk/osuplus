@@ -238,6 +238,7 @@
         }));
         return Promise.all(promises).then(() => {
             settings.displayTopNum = settings.showTop100 ? 100 : 50;
+            settings.apikey = nullIfBlankOrNull(settings.apikey);
             //settings.apikey = null;
             return settings;
         });
@@ -483,7 +484,7 @@
                     )
                 ),
                 $("<button id='osuplusSettingsSaveBtn'>Save</button>").click(function(){
-                    GMX.setValue("apikey", $("#settings-apikey").val());
+                    GMX.setValue("apikey", nullIfBlankOrNull($("#settings-apikey").val()));
                     var properties = [
                         "showMirror", "showMirror2", "showMirror3", "showMirror4", "showMirror5", "showDates", "showPpRank", "fetchPlayerCountries", "showTop100", "pp2dp", "failedChecked", 
                         "showDetailedHitCount", "showHitsPerPlay", "fetchUserpageMaxCombo", "fetchFirstsInfo", "rankingVisible", "forceShowDifficulties", "showSiteSwitcher", 
@@ -3381,6 +3382,10 @@
             }
         }
         return ans;
+    }
+
+    function nullIfBlankOrNull(stringValue) {
+        return stringValue === null || stringValue.trim() === '' || stringValue === 'null' ? null : stringValue;
     }
 
     // runs array of functions funs asynchronously and calls finalcallback() when all are done
