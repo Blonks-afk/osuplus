@@ -662,7 +662,7 @@
                     <a class='js-spoilerbox__link bbcode-spoilerbox__link' href='#'>
                         <span class="bbcode-spoilerbox__link-icon"></span>Match costs
                     </a>
-                    <div class='bbcode-spoilerbox__body osuplus-mp-body'>
+                    <div class='js-spoilerbox__body bbcode-spoilerbox__body osuplus-mp-body'>
                         <div id='osuplus-mc'>
                             Loading...
                         </div>
@@ -1540,7 +1540,7 @@
                             <span class="bbcode-spoilerbox__link-icon"></span>
                             <h2 class='title title--page-extra'>Recent 24h</h2>
                         </button>
-                        <div class="bbcode-spoilerbox__body">
+                        <div class="js-spoilerbox__body bbcode-spoilerbox__body">
                             <div id='op-recent'>Loading...</div>
                         </div>
                     </div>
@@ -2387,7 +2387,7 @@
             $(".beatmapset-info").after(
                 $("<div class='osupreview-container osuplus-header'><div class='js-spoilerbox bbcode-spoilerbox'>\
                     <a class='js-spoilerbox__link bbcode-spoilerbox__link' href='#'><span class='bbcode-spoilerbox__link-icon'></span>Preview</a>\
-                    <div class='bbcode-spoilerbox__body'><div id='osupreview'></div></div></div>"
+                    <div class='js-spoilerbox__body bbcode-spoilerbox__body'><div id='osupreview'></div></div></div>"
                 ).click(function(){
                     var osupreviewEle = $(this).find("#osupreview");
                     if(osupreviewEle.data("loaded")) return;
